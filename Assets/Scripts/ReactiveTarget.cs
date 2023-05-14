@@ -14,6 +14,10 @@ public class ReactiveTarget : MonoBehaviour {
     }
 
     public void ReactToHit() {
+        WanderingAI behaivor = GetComponent<WanderingAI>();
+        if (behaivor != null) {
+            behaivor.SetAlive(false);
+        }
         StartCoroutine(Die());
     }
 
